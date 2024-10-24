@@ -19,26 +19,23 @@ header {
 
 /* Image styling */
 img {
-    width: 95%; /* Make it fully responsive */ 
+    width: 95%; 
     height: auto; 
-    margin: 0 auto; /* Center the image horizontally */
-    border-radius: 35px; /* Rounded corners */
+    margin: 0 auto; 
+    border-radius: 35px; 
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     padding: 10px;
-    background-color: white; /* Add background to make shadow more visible */
+    background-color: white; 
     transition: transform 0.3s ease, box-shadow 0.5s ease;
 }
 
 img:hover {
-    transform: scale(1.05); /* Enlarges more */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Stronger shadow */
-    filter: brightness(1.1); /* Slight brightness boost */
-    cursor: pointer; /* Changes cursor to pointer */
+    transform: scale(1.05); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+    filter: brightness(1.1); 
+    cursor: pointer; 
 }
 
-
-
-/* Section containers */
 .container {
     background-color: white;
     border-radius: 8px;
@@ -47,10 +44,10 @@ img:hover {
 }
 
 #main-section, #skill-section, #color-change-section {
-    background-color: #505050; /* Lighter background for better contrast */
+    background-color: #505050; 
     color: white;
     border-radius: 8px;
-    padding: 30px; /* Add padding to separate content */
+    padding: 30px; 
 }
 
 /* Skills list */

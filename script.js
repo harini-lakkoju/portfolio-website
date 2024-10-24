@@ -5,27 +5,24 @@ document.getElementById('helloButton').addEventListener('click', function()
 })
 
 document.getElementById('colorButton').addEventListener('click', function() {
-    // Generate random colors
+   
     const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     document.body.style.backgroundColor = randomColor;
 });
 
-// Ensure the DOM is fully loaded before adding event listeners
 document.addEventListener('DOMContentLoaded', () => {
-// Select all skill items
-const skillItems = document.querySelectorAll('.skill-item');
 
-// Add hover effects using mouseenter and mouseleave events
+const skillItems = document.querySelectorAll('.skill-item');
 skillItems.forEach(skill => {
     skill.addEventListener('mouseenter', () => {
-        skill.style.color = '#1e1d1d'; // Change text color to Tomato on hover
-        skill.style.transform = 'scale(1.2)'; // Slightly enlarge the text
-        skill.style.transition = 'all 0.3s ease'; // Smooth transition
+        skill.style.color = '#1e1d1d'; 
+        skill.style.transform = 'scale(1.2)'; 
+        skill.style.transition = 'all 0.3s ease'; 
     });
 
     skill.addEventListener('mouseleave', () => {
-        skill.style.color = 'white'; // Revert to original color
-        skill.style.transform = 'scale(1)'; // Reset size
+        skill.style.color = 'white';
+        skill.style.transform = 'scale(1)'; 
     });
 });
 });
