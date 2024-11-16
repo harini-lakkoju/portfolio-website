@@ -2,7 +2,7 @@ import React from 'react';
 const Footer = () => {
     return (
       <footer>
-         Github:  <a href="https://github.com/harini-lakkoju" target="_blank" aria-label="GitHub">
+         Github:  <a href="https://github.com/harini-lakkoju" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style={{width:"40px", height:"40px"}}/>
   </a>
   
