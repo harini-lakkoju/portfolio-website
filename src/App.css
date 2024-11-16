@@ -1,38 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
-  text-align: center;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Allows the content to extend with scrolling */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures it's behind all content */
+  background: #5d5d5e;
+  background: linear-gradient(to left, #6b6a6a, #a0a0a0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(211, 210, 210);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+/* Circle Animations */
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 4s;
+  animation-duration: 15s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 5s;
+  animation-duration: 11s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+  animation-duration: 20s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+  animation-duration: 22s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 12s;
+  animation-duration: 17s;
+}
+
+.circles li:nth-child(10) {
+  left: 80%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 9s;
+  animation-duration: 25s;
+}
+
+.circles li:nth-child(11) {
+  left: 90%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 11s;
+  animation-duration: 30s;
+}
+
+.circles li:nth-child(12) {
+  left: 15%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 6s;
+  animation-duration: 12s;
+}
+/* Additional nth-child styles for other circles */
+@keyframes animate {
+  0% {
+      transform: translateY(0);
+      opacity: 1;
+      border-radius: 0;
+  }
+  100% {
+      transform: translateY(-1008px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* Main content styling */
+.content {
+  position: relative;
+  z-index: 1; /* Places content above the background */
+  padding: 20px;
+}
+
+
+
+
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section */
+header {
+  background-color: #505050;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+/* section {
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+} */
+
+/* Image styling */
+img {
+  width: 95%; 
+  height: auto; 
+  margin: 0 auto; 
+  border-radius: 35px; 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  background-color: white; 
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); 
+  filter: brightness(1.1); 
+  cursor: pointer; 
+}
+
+/* .container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 50px;
+  margin-bottom: 20px;
+} */
+
+#main-section, #skill-section, #pro-sec {
+  background-color: #505050; 
+  color: white;
+  border-radius: 8px;
+  padding: 30px; 
+}
+
+/* Skills list */
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* project styling */
+/* Section container */
+.projects-section {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Description box styled as a card */
+.project-description {
+  background-color:#505050 ;
+  padding: 25px;
+  width: 310px; 
+  height: 355px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  text-align:calc();
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project-description:hover {
+  background-color: rgb(243, 242, 242); 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+/* Icon styling */
+.project-description i {
+  font-size: 25px;
   color: white;
+  transition: color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.project-description:hover i {
+  color: #505050;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Text styling inside the description box */
+.project-description h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.project-description:hover h4 {
+  color: #505050;
+}
+
+/* Description paragraph styling */
+.project-description p {
+  font-size: 14px;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.project-description:hover p {
+  color: #505050; /* Change paragraph text color to #505050 on hover */
+}
+
+/* Link styling */
+.project a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.project a:hover {
+  background-color: #0056b3; 
+}
+
+.link-padding-top {
+  padding-top: 10px;
+}
+
+.apply-padding {
+  padding-top: 10px;
+}
+
+
+/* Footer styling */
+footer {
+  text-align: center;
+  background-color: #505050;
+  color: white;
+  padding: 10px;
+  margin-top: auto;
+  font-size: large;
 }
